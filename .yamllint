@@ -13,3 +13,4 @@ rules:
   # truthy: disable
 ignore: |
   .travis.yml
+  config.yml
