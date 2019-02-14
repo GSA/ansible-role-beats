@@ -18,6 +18,13 @@
     - metricbeat_config is defined
     - package == "metricbeat"
 
+- name: Getting heartbeat configuration
+  set_fact:
+    package_config: "{{ heartbeat_config }}"
+  when:
+    - heartbeat_config is defined
+    - package == "heartbeat"
+
 - name: "Ensure {{ package }} is installed"
   apt:
     name: "{{ package }}={{ beats_ver }}"
